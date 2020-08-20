@@ -1,0 +1,43 @@
+version: "3.3"
+
+services:
+
+  ibama:
+    build: ./ibama
+    image: appibama_ibama
+    networks:
+      - deploy_network
+    container_name: ibama
+    volumes:
+      - ./volumes:/ibama/files
+
+
+    #restart: always
+
+  flask:
+    build: ./flask
+    image: appibama_flask
+    container_name: flask
+    networks:
+      - deploy_network
+    #restart: always
+    environment:
+      - APP_NAME=Myapp
+    expose:
+      - 8080
+    volumes:
+      - ./volumes:/app/volume
+
+  nginx:
+    build: ./nginx
+    image: appibama_nginx
+    networks:
+      - deploy_network
+    container_name: nginx
+    #restart: always
+    ports:
+      - "8081:8081"
+
+networks:
+  deploy_network:
+    driver: bridge
