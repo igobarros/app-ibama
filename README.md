@@ -37,7 +37,7 @@ $ docker-compose up --build
 7 directories, 15 files
 ```
 
-Por de baixo dos panos, serão construidos 3 containers docker sendo orquestrados pelo docker-compose. O primeiro container scraping, responsável por realizar o download do arquivo que será extraído as informações para análises. No segundo container, do flask, será responsável por ler a base de dados e disponilizar por API via requisições HTTP em json. Por último, temos o terceiro container que é responsável pelas requisições da API do flask.
+Por de baixo dos panos, serão construidos 3 containers docker sendo orquestrados pelo docker-compose. O primeiro container scraping, responsável por realizar o download do arquivo que será extraído as informações para análises. No segundo container, do flask, será responsável por ler a base de dados e disponilizar por API via requisições HTTP em json. Por último, temos o terceiro container que é responsável pelas requisições da API desenvolvida com flask.
 
 ### Comandos úteis de docker-compose
 
@@ -74,5 +74,5 @@ $ docker-compose ps -a
 Entrar dentro de um container
 
 ```bash
-$ sudo docker exec -it flask /bin/bash
+$ sudo docker exec -it <image_name> /bin/bash
 ```
