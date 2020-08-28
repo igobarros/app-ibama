@@ -10,15 +10,15 @@ services:
     container_name: ibama
     volumes:
       - ./volumes:/ibama/files
-    #restart: always
 
   flask:
     build: ./flask
+    depends_on:
+      - ibama
     image: appibama_flask
     container_name: flask
     networks:
       - deploy_network
-    #restart: always
     environment:
       - APP_NAME=Myapp
     expose:
@@ -28,11 +28,12 @@ services:
 
   nginx:
     build: ./nginx
+    depends_on:
+      - ibama
     image: appibama_nginx
     networks:
       - deploy_network
     container_name: nginx
-    #restart: always
     ports:
       - "8081:8081"
 
