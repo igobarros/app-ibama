@@ -1,5 +1,7 @@
 ## Análise dos locais que foram afetado por manchas de óleo, de acordo com dados do [IBAMA](http://www.ibama.gov.br/manchasdeoleo-localidades-atingidas)
 
+#### Esse projeto é uma parte melhorada do seu estado original desenvolvido no repositório de [Karinne Cristina](https://github.com/karinnecristina/Aplicacao_web)
+
 ### Como rodar o projeto
 
 ```
@@ -36,6 +38,9 @@ $ docker-compose up --build
 
 7 directories, 15 files
 ```
+
+![ScreenShot](scheme_docker.png)
+
 
 Por de baixo dos panos, serão construidos 3 containers docker sendo orquestrados pelo docker-compose. O primeiro container scraping, responsável por realizar o download do arquivo que será extraído as informações para análises. No segundo container, do flask, será responsável por ler a base de dados e disponilizar por API via requisições HTTP em json. Por último, temos o terceiro container que é responsável pelas requisições da API desenvolvida com flask.
 
