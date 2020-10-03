@@ -6,6 +6,7 @@
 
 ```
 $ git clone https://github.com/igobarros/app-ibama.git
+$ cd app-ibama
 $ docker-compose up --build
 ```
 
